@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: "Portfolio personal de Massimo - Desarrollador Full Stack",
   keywords: ["portfolio", "desarrollador", "full stack", "react", "nextjs", "typescript"],
   authors: [{ name: "Massimo" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
 };
 
 export const viewport = {

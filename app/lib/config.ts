@@ -1,0 +1,101 @@
+import type { Project, SkillCategory, ContactInfo } from "@/app/interfaces";
+
+/**
+ * Información de contacto
+ * Actualiza esto con tus datos reales
+ */
+export const CONTACT_INFO: ContactInfo = {
+  email: "massimoparzanese@gmail.com",
+  phone: "+54 2346 602440",
+  location: "La Plata, Buenos Aires, Argentina",
+  social: {
+    github: "https://github.com/massimoparzanese",
+    linkedin: "https://www.linkedin.com/in/massimo-parzanese-b05509344/",
+  },
+};
+
+/**
+ * Lista de proyectos destacados
+ * Reemplaza con tus proyectos reales desde el Figma
+ */
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: 'El Club del Filete',
+    description: 'Plataforma cultural dedicada al arte del fileteado argentino',
+    longDescription: 'Aplicación web full stack desarrollada para una plataforma cultural relacionada con el fileteado argentino. El proyecto incluye un frontend moderno con React y Tailwind CSS, backend robusto con Node.js implementando APIs REST, y base de datos PostgreSQL. La aplicación maneja autenticación de usuarios, gestión de contenido dinámico y galería de artistas. Actualmente en producción y recibiendo visitas diarias.',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'APIs REST', 'Git'],
+    liveUrl: 'https://elclubdelfilete.com.ar/',
+    githubUrl: 'https://github.com/massimoparzanese/elclubdelfilete',
+    period: 'Oct 2024 - Mar 2025',
+    image: '/ElClubDelFilete.png',
+    category: 'Full Stack',
+    showCode: false,
+  },
+  {
+    id: 2,
+    title: 'Envy | Clínica de Fertilidad',
+    description: 'Sistema de gestión integral para una clínica de fertilidad. Pacientes gestionan turnos e historia clínica; médicos registran tratamientos y seguimiento embrionario; operadores de laboratorio registran punciones, fertilizaciones y donaciones.',
+    longDescription: 'Sistema de gestión integral para una clínica de fertilidad. Pacientes gestionan turnos e historia clínica; médicos registran tratamientos y seguimiento embrionario; operadores de laboratorio registran punciones, fertilizaciones y donaciones.',
+    technologies: ['Django', 'React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'SQLite'],
+    githubUrl: 'https://github.com/massimoparzanese/envy',
+    githubLinks: [
+      { label: 'Backend', url: 'https://github.com/TTPS-Grupo-1/backend-Clinica' },
+      { label: 'Frontend', url: 'https://github.com/TTPS-Grupo-1/frontend-Clinica' },
+    ],
+    period: '2025',
+    image: '',
+    category: 'Full Stack',
+    showCode: true,
+    academic: true,
+  },
+];
+/**
+ * Categorías de habilidades técnicas
+ */
+export const skillCategories: SkillCategory[] = [
+  {
+    title: 'Backend',
+    skills: ['Node.js', 'NestJS', 'Flask', 'Django', 'APIs REST', 'Java'],
+    color: 'blue',
+  },
+  {
+    title: 'Frontend',
+    skills: ['React', 'Next.js', 'Vue.js', 'HTML', 'CSS', 'Tailwind CSS', 'JavaScript'],
+    color: 'cyan',
+  },
+  {
+    title: 'Bases de Datos',
+    skills: ['PostgreSQL', 'SQL', 'Diseño de bases de datos', 'Modelado entidad-relación', 'Optimización de consultas SQL'],
+    color: 'teal',
+  },
+  {
+    title: 'Herramientas & Metodologías',
+    skills: ['Git', 'Docker', 'Linux', 'POO', 'Refactoring y patrones de diseño', 'Tests unitarios'],
+    color: 'purple',
+  },
+  {
+    title: 'Lenguajes',
+    skills: ['JavaScript', 'Python', 'Java', 'SQL'],
+    color: 'pink',
+  },
+];
+
+export const colorClasses: Record<string, string> = {
+  blue: 'bg-blue-500/10 text-blue-400 border-blue-500/20 hover:bg-blue-500/20',
+  cyan: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20 hover:bg-cyan-500/20',
+  teal: 'bg-teal-500/10 text-teal-400 border-teal-500/20 hover:bg-teal-500/20',
+  purple: 'bg-purple-500/10 text-purple-400 border-purple-500/20 hover:bg-purple-500/20',
+  pink: 'bg-pink-500/10 text-pink-400 border-pink-500/20 hover:bg-pink-500/20',
+};
+
+/**
+ * Configuración del sitio
+ */
+export const SITE_CONFIG = {
+  name: "Massimo Portfolio",
+  description: "Portfolio personal de Massimo - Desarrollador Full Stack",
+  author: "Massimo",
+  year: new Date().getFullYear(),
+  theme: "dark" as const,
+};

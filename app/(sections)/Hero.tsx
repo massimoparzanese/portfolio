@@ -15,9 +15,9 @@ export function Hero() {
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Availability badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-teal-500/10 border border-teal-500/30 rounded-full">
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-teal-500/10 border border-teal-500/25 rounded-full">
           <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-          <span className="text-teal-400 text-sm font-medium">Disponible para nuevas oportunidades</span>
+          <span className="text-teal-400 text-xs md:text-sm font-medium">Abierto a nuevos desafíos remotos/híbridos</span>
         </div>
 
         {/* Name and title */}
@@ -29,12 +29,9 @@ export function Hero() {
           Desarrollador Full Stack · Enfoque en Backend
         </p>
         
-        <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
-          Me apasiona transformar ideas en productos reales: desde el diseño de
-          la base de datos hasta la interfaz. Escribo código limpio, mantenible
-          y con ganas de que escale. Actualmente como Ayudante Alumno en Diseño de Bases de Datos en la{" "}
-          <span className="text-blue-400 font-medium">UNLP</span> y buscando
-          nuevos desafíos profesionales.
+        <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Construyo productos web de punta a punta, con foco en arquitectura backend, datos y una experiencia de usuario clara. Actualmente soy Ayudante Alumno en Diseño de Bases de Datos en la{" "}
+          <span className="text-blue-400 font-medium">UNLP</span> y busco nuevos desafíos Full Stack donde pueda aportar impacto real.
         </p>
 
         

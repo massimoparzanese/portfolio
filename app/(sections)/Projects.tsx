@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ExternalLink, Calendar } from 'lucide-react';
-import type { Project } from '../interfaces';
 import { ImageWithFallback } from '../components/ui/ImageWithFallback';
 import { projects, CONTACT_INFO } from '../lib/config';
 
@@ -24,17 +23,17 @@ export function Projects() {
           Aplicaciones web desarrolladas end-to-end con <span className="text-blue-400 font-medium">tecnologías modernas</span> y mejores prácticas de desarrollo
         </p>
         
-        <div className="grid lg:grid-cols-1 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {featured.map((project) => (
             <div
               key={project.id}
-              className="group relative"
+              className="group relative h-full"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative h-full flex flex-col bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20">
                 {/* Image Section */}
-                <div className="relative h-64 md:h-80 overflow-hidden">
+                <div className="relative h-56 md:h-64 overflow-hidden">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
@@ -80,10 +79,10 @@ export function Projects() {
                 </div>{/* END Image Section */}
 
                 {/* Content Section */}
-                <div className="p-8">
+                <div className="p-8 flex-1 flex flex-col">
                   {/* Title and Period */}
                   <div className="mb-4">
-                    <h3 className="text-3xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
                     <div className="flex items-center gap-2 text-slate-400">
@@ -115,7 +114,7 @@ export function Projects() {
                   </div>
                   
                   {/* Action buttons */}
-                  <div className="flex gap-3 pt-4 border-t border-slate-700">
+                  <div className="mt-auto flex gap-3 pt-4 border-t border-slate-700">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}

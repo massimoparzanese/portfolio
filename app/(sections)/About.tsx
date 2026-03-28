@@ -38,7 +38,7 @@ export function About() {
               Actualmente me desempeño como <span className="text-cyan-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseñando Fundamentos de organización de datos y Diseño de bases de datos.
             </p>
             <p className="text-slate-300 leading-relaxed text-base">
-              Estudiante de <span className="text-cyan-400 font-semibold">Analista Programador Universitario</span> con <span className="text-cyan-400 font-semibold">83.40%</span> de avance.
+              Graduado en <span className="text-cyan-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-cyan-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.
             </p>
           </article>
           

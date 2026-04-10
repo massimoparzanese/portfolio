@@ -1,16 +1,53 @@
-import { Code2, GraduationCap, Target } from 'lucide-react';
+"use client";
+
+import { motion, type Variants } from "framer-motion";
+import { Code2, GraduationCap, Target } from "lucide-react";
+
+const sectionVariants: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut" as const,
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+    <motion.section
+      id="about"
+      className="py-20 px-6"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={sectionVariants}
+    >
+      <motion.div className="max-w-6xl mx-auto" variants={sectionVariants}>
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
+          variants={itemVariants}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
           Sobre mí
-        </h2>
+        </motion.h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div className="grid md:grid-cols-3 gap-8" variants={sectionVariants}>
           {/* Who am I */}
-          <article className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+          <motion.article
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+            variants={itemVariants}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            whileHover={{ y: -4 }}
+          >
             <div className="bg-blue-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
               <Code2 className="w-7 h-7 text-blue-400" />
             </div>
@@ -26,10 +63,15 @@ export function About() {
               Me importa que el código sea limpio, mantenible y que resuelva
               problemas reales.
             </p>
-          </article>
+          </motion.article>
           
           {/* What I do */}
-          <article className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+          <motion.article
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+            variants={itemVariants}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            whileHover={{ y: -4 }}
+          >
             <div className="bg-cyan-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
               <GraduationCap className="w-7 h-7 text-cyan-400" />
             </div>
@@ -40,10 +82,15 @@ export function About() {
             <p className="text-slate-300 leading-relaxed text-base">
               Graduado en <span className="text-cyan-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-cyan-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.
             </p>
-          </article>
+          </motion.article>
           
           {/* My goals */}
-          <article className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
+          <motion.article
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
+            variants={itemVariants}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            whileHover={{ y: -4 }}
+          >
             <div className="bg-teal-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
               <Target className="w-7 h-7 text-teal-400" />
             </div>
@@ -51,9 +98,9 @@ export function About() {
             <p className="text-slate-300 leading-relaxed text-base">
               Me interesa construir <span className="text-teal-400 font-medium">aplicaciones escalables</span>, <span className="text-teal-400 font-medium">optimizadas</span> y <span className="text-teal-400 font-medium">mantenibles</span>, trabajando en colaboración con otros desarrolladores y equipos de producto. Busco seguir creciendo profesionalmente y aportar valor en proyectos desafiantes.
             </p>
-          </article>
-        </div>
-      </div>
-    </section>
+          </motion.article>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between md:hidden">
           <button
             onClick={() => scrollToSection("hero")}
-            className="cursor-pointer text-xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-cyan-300 transition-all"
+            className="cursor-pointer text-xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-fuchsia-300 transition-all"
           >
             MP
           </button>
@@ -80,7 +80,7 @@ export default function Navbar() {
               onClick={() => scrollToSection("hero")}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
-              className="cursor-pointer px-3 py-2 text-xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-cyan-300 transition-all"
+              className="cursor-pointer px-3 py-2 text-xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-fuchsia-300 transition-all"
             >
               MP
             </motion.button>
@@ -93,7 +93,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ y: -1, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="cursor-pointer px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all duration-300"
+                className="cursor-pointer px-4 py-2 text-violet-200 hover:text-fuchsia-300 hover:bg-slate-800/60 rounded-full transition-all duration-300"
               >
                 {item.label}
               </motion.button>
@@ -103,7 +103,7 @@ export default function Navbar() {
               onClick={() => scrollToSection("contact")}
               whileHover={{ y: -1, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="ml-1 px-4 py-2 bg-blue-600 hover:bg-blue-500 cursor-pointer text-white rounded-full transition-all duration-300"
+              className="ml-1 px-4 py-2 bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 cursor-pointer text-white rounded-full transition-all duration-300"
             >
               Hablemos
             </motion.button>
@@ -126,7 +126,7 @@ export default function Navbar() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     whileTap={{ scale: 0.98 }}
-                    className="cursor-pointer px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-800/70 rounded-lg transition-all duration-300 text-left"
+                    className="cursor-pointer px-4 py-2 text-violet-200 hover:text-fuchsia-300 hover:bg-slate-800/70 rounded-lg transition-all duration-300 text-left"
                   >
                     {item.label}
                   </motion.button>
@@ -134,7 +134,7 @@ export default function Navbar() {
                 <motion.button
                   onClick={() => scrollToSection("contact")}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all duration-300 text-center"
+                  className="mt-2 px-4 py-2 bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white rounded-lg transition-all duration-300 text-center"
                 >
                   Hablemos
                 </motion.button>

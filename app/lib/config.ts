@@ -98,11 +98,11 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const colorClasses: Record<string, string> = {
-  blue: 'bg-blue-500/10 text-blue-400 border-blue-500/20 hover:bg-blue-500/20',
-  cyan: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20 hover:bg-cyan-500/20',
-  teal: 'bg-teal-500/10 text-teal-400 border-teal-500/20 hover:bg-teal-500/20',
-  purple: 'bg-purple-500/10 text-purple-400 border-purple-500/20 hover:bg-purple-500/20',
-  pink: 'bg-pink-500/10 text-pink-400 border-pink-500/20 hover:bg-pink-500/20',
+  blue: 'bg-violet-500/10 text-violet-300 border-violet-500/20 hover:bg-violet-500/20',
+  cyan: 'bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-500/20 hover:bg-fuchsia-500/20',
+  teal: 'bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20',
+  purple: 'bg-violet-600/10 text-violet-200 border-violet-600/20 hover:bg-violet-600/20',
+  pink: 'bg-fuchsia-600/10 text-fuchsia-200 border-fuchsia-600/20 hover:bg-fuchsia-600/20',
 };
 
 /**

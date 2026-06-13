@@ -6,13 +6,11 @@ import { ExternalLink, Calendar } from "lucide-react";
 import { ImageWithFallback } from "../components/ui/ImageWithFallback";
 import { projects, CONTACT_INFO } from "../lib/config";
 
-
+const featured = projects.filter((p) => !p.academic);
+const academic = projects.filter((p) => p.academic);
 
 export function Projects() {
   const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
-
-  const featured = projects.filter((p) => !p.academic);
-  const academic = projects.filter((p) => p.academic);
 
   return (
     <section id="projects" className="py-24 md:py-20 px-4 sm:px-6 bg-slate-900/50 scroll-mt-24 md:scroll-mt-28">
@@ -44,7 +42,7 @@ export function Projects() {
                 <div className="relative h-48 sm:h-52 md:h-64 overflow-hidden">
                   <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.6, ease: "easeOut" }} className="w-full h-full">
                     <ImageWithFallback
-                      src={project.image}
+                      src={project.image || '/globe.svg'}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out"
                     />

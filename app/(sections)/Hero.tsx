@@ -2,6 +2,7 @@
 
 import { Mail, ChevronDown, Code2, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { CONTACT_INFO } from '../lib/config';
 
 export function Hero() {
   const scrollToAbout = () => {
@@ -87,7 +88,7 @@ export function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com/in/massimoparzanese"
+              href={CONTACT_INFO.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-6 py-3 bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-violet-50 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40"

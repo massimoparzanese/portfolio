@@ -3,7 +3,7 @@ import { CONTACT_INFO } from '../lib/config';
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 px-6 bg-slate-900/50">
+    <section id="contact" className="py-20 px-6 bg-slate-900/50 scroll-mt-24 md:scroll-mt-28">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-violet-300 to-fuchsia-400 bg-clip-text text-transparent">
           Contacto

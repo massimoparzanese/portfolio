@@ -16,6 +16,16 @@ const sectionVariants: Variants = {
   },
 };
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 },
@@ -31,7 +41,7 @@ export function About() {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
-      <motion.div className="max-w-6xl mx-auto" variants={sectionVariants}>
+      <motion.div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-6 bg-linear-to-r from-violet-300 to-fuchsia-400 bg-clip-text text-transparent"
           variants={itemVariants}
@@ -44,7 +54,7 @@ export function About() {
           variants={itemVariants}
         />
         
-        <motion.div className="grid md:grid-cols-3 gap-8" variants={sectionVariants}>
+        <motion.div className="grid md:grid-cols-3 gap-8" variants={containerVariants}>
           {/* Who am I */}
           <motion.article
             className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
@@ -81,7 +91,10 @@ export function About() {
             </div>
             <h3 className="text-2xl font-bold text-fuchsia-100 mb-4">A qué me dedico</h3>
             <p className="text-slate-300 leading-relaxed mb-4 text-base">
-              Actualmente me desempeño como <span className="text-fuchsia-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseñando Fundamentos de organización de datos y Diseño de bases de datos.
+              Actualmente me desempeño como <span className="text-fuchsia-400 font-semibold">Desarrollador Full Stack</span> en el <span className="text-fuchsia-400 font-semibold">Ministerio de Economía de la Provincia de Buenos Aires</span>, trabajando en el proyecto RAFAM con <span className="text-fuchsia-400 font-medium">React</span>, <span className="text-fuchsia-400 font-medium">Django</span> y <span className="text-fuchsia-400 font-medium">Docker</span>.
+            </p>
+            <p className="text-slate-300 leading-relaxed mb-4 text-base">
+              Como <span className="text-fuchsia-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseño Fundamentos de organización de datos y Diseño de bases de datos.
             </p>
             <p className="text-slate-300 leading-relaxed text-base">
               Graduado en <span className="text-fuchsia-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-fuchsia-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.

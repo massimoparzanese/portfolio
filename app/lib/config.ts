@@ -34,6 +34,18 @@ export const projects: Project[] = [
     showCode: false,
   },
   {
+    id: 4,
+    title: 'RAFAM II - Ministerio de Economía PBA',
+    description: 'Sistema de gestión integral para los municipios de la Provincia de Buenos Aires.',
+    longDescription: 'Plataforma que centraliza procesos administrativos y operativos de municipios bonaerenses, mejorando trazabilidad y eficiencia en gestión pública.',
+    impact: 'Optimización de procesos de gestión municipal a nivel provincial.',
+    technologies: ['React', 'Django', 'Docker'],
+    period: 'May 2026 - Presente',
+    image: '',
+    category: 'Full Stack',
+    showCode: false,
+  },
+  {
     id: 3,
     title: 'Plataforma Interna de Gestion Documental y Novedades',
     description: 'Como Desarrollador Fullstack en Aligo Tres Arroyos, desarrolle una plataforma interna para centralizar documentos y novedades corporativas con acceso seguro.',
@@ -103,15 +115,4 @@ export const colorClasses: Record<string, string> = {
   teal: 'bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20',
   purple: 'bg-violet-600/10 text-violet-200 border-violet-600/20 hover:bg-violet-600/20',
   pink: 'bg-fuchsia-600/10 text-fuchsia-200 border-fuchsia-600/20 hover:bg-fuchsia-600/20',
-};
-
-/**
- * Configuración del sitio
- */
-export const SITE_CONFIG = {
-  name: "Massimo Portfolio",
-  description: "Portfolio personal de Massimo - Desarrollador Full Stack",
-  author: "Massimo",
-  year: new Date().getFullYear(),
-  theme: "dark" as const,
 };

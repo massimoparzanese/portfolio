@@ -43,37 +43,37 @@ export function About() {
     >
       <motion.div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-linear-to-r from-violet-300 to-fuchsia-400 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-linear-to-r from-teal-300 to-emerald-400 bg-clip-text text-transparent"
           variants={itemVariants}
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
           Sobre mí
         </motion.h2>
         <motion.div
-          className="w-24 h-1 rounded-full bg-linear-to-r from-violet-400 to-fuchsia-500 mx-auto mb-16"
+          className="w-24 h-1 rounded-full bg-linear-to-r from-teal-400 to-emerald-500 mx-auto mb-16"
           variants={itemVariants}
         />
         
         <motion.div className="grid md:grid-cols-3 gap-8" variants={containerVariants}>
           {/* Who am I */}
           <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
             variants={itemVariants}
             transition={{ duration: 0.35, ease: "easeOut" }}
             whileHover={{ y: -4 }}
           >
-            <div className="bg-violet-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <Code2 className="w-7 h-7 text-violet-400" />
+            <div className="bg-teal-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+              <Code2 className="w-7 h-7 text-teal-400" />
             </div>
-            <h3 className="text-2xl font-bold text-violet-100 mb-4">Quién soy</h3>
+            <h3 className="text-2xl font-bold text-teal-100 mb-4">Quién soy</h3>
             <p className="text-slate-300 leading-relaxed text-base">
               Desarrollador Full Stack con enfoque en backend. Diseño y construyo
               APIs REST, sistemas de bases de datos e interfaces web con diferentes
               tecnologías, como:{" "}
-              <span className="text-violet-400 font-medium">Node.js</span>,{" "}
-              <span className="text-violet-400 font-medium">TypeScript</span>,{" "}
-              <span className="text-violet-400 font-medium">Python</span> y{" "}
-              <span className="text-violet-400 font-medium">PostgreSQL</span>.
+              <span className="text-teal-400 font-medium">Node.js</span>,{" "}
+              <span className="text-teal-400 font-medium">TypeScript</span>,{" "}
+              <span className="text-teal-400 font-medium">Python</span> y{" "}
+              <span className="text-teal-400 font-medium">PostgreSQL</span>.
               Me importa que el código sea limpio, mantenible y que resuelva
               problemas reales.
             </p>
@@ -81,39 +81,39 @@ export function About() {
           
           {/* What I do */}
           <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-fuchsia-500/10"
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
             variants={itemVariants}
             transition={{ duration: 0.35, ease: "easeOut" }}
             whileHover={{ y: -4 }}
           >
-            <div className="bg-fuchsia-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <GraduationCap className="w-7 h-7 text-fuchsia-400" />
+            <div className="bg-emerald-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+              <GraduationCap className="w-7 h-7 text-emerald-400" />
             </div>
-            <h3 className="text-2xl font-bold text-fuchsia-100 mb-4">A qué me dedico</h3>
+            <h3 className="text-2xl font-bold text-emerald-100 mb-4">A qué me dedico</h3>
             <p className="text-slate-300 leading-relaxed mb-4 text-base">
-              Actualmente me desempeño como <span className="text-fuchsia-400 font-semibold">Desarrollador Full Stack</span> en el <span className="text-fuchsia-400 font-semibold">Ministerio de Economía de la Provincia de Buenos Aires</span>, trabajando en el proyecto RAFAM con <span className="text-fuchsia-400 font-medium">React</span>, <span className="text-fuchsia-400 font-medium">Django</span> y <span className="text-fuchsia-400 font-medium">Docker</span>.
+              Actualmente me desempeño como <span className="text-emerald-400 font-semibold">Desarrollador Full Stack</span> en el <span className="text-emerald-400 font-semibold">Ministerio de Economía de la Provincia de Buenos Aires</span>, trabajando en el proyecto RAFAM con <span className="text-emerald-400 font-medium">React</span>, <span className="text-emerald-400 font-medium">Django</span> y <span className="text-emerald-400 font-medium">Docker</span>.
             </p>
             <p className="text-slate-300 leading-relaxed mb-4 text-base">
-              Como <span className="text-fuchsia-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseño Fundamentos de organización de datos y Diseño de bases de datos.
+              Como <span className="text-emerald-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseño Fundamentos de organización de datos y Diseño de bases de datos.
             </p>
             <p className="text-slate-300 leading-relaxed text-base">
-              Graduado en <span className="text-fuchsia-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-fuchsia-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.
+              Graduado en <span className="text-emerald-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-emerald-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.
             </p>
           </motion.article>
           
           {/* My goals */}
           <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10"
+            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
             variants={itemVariants}
             transition={{ duration: 0.35, ease: "easeOut" }}
             whileHover={{ y: -4 }}
           >
-            <div className="bg-orange-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <Target className="w-7 h-7 text-orange-400" />
+            <div className="bg-amber-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+              <Target className="w-7 h-7 text-amber-400" />
             </div>
-            <h3 className="text-2xl font-bold text-orange-100 mb-4">Mis objetivos</h3>
+            <h3 className="text-2xl font-bold text-amber-100 mb-4">Mis objetivos</h3>
             <p className="text-slate-300 leading-relaxed text-base">
-              Me interesa construir <span className="text-orange-400 font-medium">aplicaciones escalables</span>, <span className="text-orange-400 font-medium">optimizadas</span> y <span className="text-orange-400 font-medium">mantenibles</span>, trabajando en colaboración con otros desarrolladores y equipos de producto. Busco seguir creciendo profesionalmente y aportar valor en proyectos desafiantes.
+              Me interesa construir <span className="text-amber-400 font-medium">aplicaciones escalables</span>, <span className="text-amber-400 font-medium">optimizadas</span> y <span className="text-amber-400 font-medium">mantenibles</span>, trabajando en colaboración con otros desarrolladores y equipos de producto. Busco seguir creciendo profesionalmente y aportar valor en proyectos desafiantes.
             </p>
           </motion.article>
         </motion.div>

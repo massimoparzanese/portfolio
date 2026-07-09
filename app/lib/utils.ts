@@ -30,6 +30,6 @@ export function getImagePlaceholder(width: number = 400, height: number = 300) {
       <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#9ca3af">
         ${width}×${height}
       </text>
-    </svg>`
+    </svg>`,
   )}`;
 }

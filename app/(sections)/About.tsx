@@ -1,123 +1,58 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { Code2, GraduationCap, Target } from "lucide-react";
+import { Section } from "../components/Section";
 
-const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut" as const,
-      staggerChildren: 0.08,
-    },
+const details = [
+  {
+    label: "FORMACIÓN",
+    primary: "Analista Programador Universitario",
+    secondary: "UNLP · Graduado · Cursando Licenciatura en Sistemas (4to año)",
+    accent: "rgba(139,92,246,0.55)",
   },
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
+  {
+    label: "ROL ACTUAL",
+    primary: "Ayudante Alumno — Facultad de Informática",
+    secondary: "UNLP · Fundamentos de organización de datos · Diseño de bases de datos",
+    accent: "rgba(217,70,239,0.5)",
   },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0 },
-};
+  {
+    label: "UBICACIÓN",
+    primary: "La Plata, Buenos Aires",
+    secondary: "Argentina",
+    accent: "rgba(249,115,22,0.5)",
+  },
+  {
+    label: "FOCO",
+    primary: "Aplicaciones escalables y mantenibles",
+    secondary: "Código limpio. Colaboración. Sistemas que duran.",
+    accent: "rgba(255,255,255,0.18)",
+  },
+];
 
 export function About() {
   return (
-    <motion.section
-      id="about"
-      className="py-20 px-6"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={sectionVariants}
-    >
-      <motion.div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-linear-to-r from-teal-300 to-emerald-400 bg-clip-text text-transparent"
-          variants={itemVariants}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          Sobre mí
-        </motion.h2>
-        <motion.div
-          className="w-24 h-1 rounded-full bg-linear-to-r from-teal-400 to-emerald-500 mx-auto mb-16"
-          variants={itemVariants}
-        />
-        
-        <motion.div className="grid md:grid-cols-3 gap-8" variants={containerVariants}>
-          {/* Who am I */}
-          <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
-            variants={itemVariants}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            whileHover={{ y: -4 }}
-          >
-            <div className="bg-teal-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <Code2 className="w-7 h-7 text-teal-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-teal-100 mb-4">Quién soy</h3>
-            <p className="text-slate-300 leading-relaxed text-base">
-              Desarrollador Full Stack con enfoque en backend. Diseño y construyo
-              APIs REST, sistemas de bases de datos e interfaces web con diferentes
-              tecnologías, como:{" "}
-              <span className="text-teal-400 font-medium">Node.js</span>,{" "}
-              <span className="text-teal-400 font-medium">TypeScript</span>,{" "}
-              <span className="text-teal-400 font-medium">Python</span> y{" "}
-              <span className="text-teal-400 font-medium">PostgreSQL</span>.
-              Me importa que el código sea limpio, mantenible y que resuelva
-              problemas reales.
+    <Section id="about" label="Sobre mí" num="01">
+      <p className="font-body text-white/72 leading-[1.7] mb-14" style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}>
+        Desarrollador Full Stack con enfoque en backend. Diseño y construyo APIs REST,
+        sistemas de bases de datos e interfaces web con{" "}
+        <span className="text-white font-medium">Node.js</span>,{" "}
+        <span className="text-white font-medium">TypeScript</span>,{" "}
+        <span className="text-white font-medium">Python</span> y{" "}
+        <span className="text-white font-medium">PostgreSQL</span>.
+        Me importa que el código sea limpio, mantenible y que resuelva problemas reales.
+      </p>
+
+      <div className="grid sm:grid-cols-2 gap-7">
+        {details.map(({ label, primary, secondary, accent }) => (
+          <div key={label} className="pl-5 py-0.5" style={{ borderLeft: `2px solid ${accent}` }}>
+            <p className="font-mono-custom text-white/30 text-[10px] tracking-[0.22em] mb-1.5 uppercase">
+              {label}
             </p>
-          </motion.article>
-          
-          {/* What I do */}
-          <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
-            variants={itemVariants}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            whileHover={{ y: -4 }}
-          >
-            <div className="bg-emerald-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <GraduationCap className="w-7 h-7 text-emerald-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-emerald-100 mb-4">A qué me dedico</h3>
-            <p className="text-slate-300 leading-relaxed mb-4 text-base">
-              Actualmente me desempeño como <span className="text-emerald-400 font-semibold">Desarrollador Full Stack</span> en el <span className="text-emerald-400 font-semibold">Ministerio de Economía de la Provincia de Buenos Aires</span>, trabajando en el proyecto RAFAM con <span className="text-emerald-400 font-medium">React</span>, <span className="text-emerald-400 font-medium">Django</span> y <span className="text-emerald-400 font-medium">Docker</span>.
-            </p>
-            <p className="text-slate-300 leading-relaxed mb-4 text-base">
-              Como <span className="text-emerald-400 font-semibold">Ayudante Alumno</span> en la Facultad de Informática - UNLP, enseño Fundamentos de organización de datos y Diseño de bases de datos.
-            </p>
-            <p className="text-slate-300 leading-relaxed text-base">
-              Graduado en <span className="text-emerald-400 font-semibold">Analista Programador Universitario</span>. Actualmente cursando el <span className="text-emerald-400 font-semibold">4to año de la Licenciatura en Sistemas</span>.
-            </p>
-          </motion.article>
-          
-          {/* My goals */}
-          <motion.article
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
-            variants={itemVariants}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            whileHover={{ y: -4 }}
-          >
-            <div className="bg-amber-500/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-              <Target className="w-7 h-7 text-amber-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-amber-100 mb-4">Mis objetivos</h3>
-            <p className="text-slate-300 leading-relaxed text-base">
-              Me interesa construir <span className="text-amber-400 font-medium">aplicaciones escalables</span>, <span className="text-amber-400 font-medium">optimizadas</span> y <span className="text-amber-400 font-medium">mantenibles</span>, trabajando en colaboración con otros desarrolladores y equipos de producto. Busco seguir creciendo profesionalmente y aportar valor en proyectos desafiantes.
-            </p>
-          </motion.article>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+            <p className="font-body text-white/80 text-sm leading-snug mb-0.5">{primary}</p>
+            <p className="font-body text-white/38 text-sm">{secondary}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }

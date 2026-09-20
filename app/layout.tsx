@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, DM_Sans, Geist_Mono } from "next/font/google";
+import { Unbounded, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-display",
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-body",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -36,10 +37,6 @@ export const metadata: Metadata = {
     title: "Massimo Parzanese | Full Stack Developer",
     description: "Desarrollador Full Stack especializado en backend con Python, React, TypeScript y PostgreSQL.",
   },
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-  },
 };
 
 export const viewport = {
@@ -55,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${bricolage.variable} ${dmSans.variable} ${geistMono.variable} antialiased`}
+        className={`${unbounded.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>

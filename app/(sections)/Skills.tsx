@@ -1,100 +1,72 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { skillCategories, colorClasses } from "../lib/config";
+import { useEffect, useRef, useState } from "react";
+import { skillCategories } from "../lib/config";
 
-const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut" as const,
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0 },
-};
+const SKILLS_BASE = [...new Set(skillCategories.flatMap((category) => category.skills))];
+const SKILLS_ROW_A = [...SKILLS_BASE, ...SKILLS_BASE];
+const SKILLS_ROW_B = [...[...SKILLS_BASE].reverse(), ...[...SKILLS_BASE].reverse()];
 
 export function Skills() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) setVisible(true);
+    }, { threshold: 0.1 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <motion.section
-      id="skills"
-      className="py-20 px-6"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-teal-300 to-emerald-400 bg-clip-text text-transparent"
-          variants={itemVariants}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          Habilidades Técnicas
-        </motion.h2>
-        <motion.div
-          className="w-24 h-1 rounded-full bg-linear-to-r from-teal-400 to-emerald-500 mx-auto mb-8"
-          variants={itemVariants}
-        />
-        <motion.p
-          className="text-center text-slate-400 mb-16 max-w-2xl mx-auto text-lg leading-relaxed"
-          variants={itemVariants}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          Tecnologías y herramientas con las que trabajo para crear <span className="text-teal-400 font-medium">soluciones innovadoras</span>
-        </motion.p>
-
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-        >
-          {skillCategories.map((category, index) => (
-            <motion.article
-              key={index}
-              className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-teal-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
-              variants={itemVariants}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              whileHover={{ y: -4 }}
-            >
-              <h3 className="text-xl font-bold text-teal-100 mb-4">
-                {category.title}
-              </h3>
-
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.span
-                    key={skillIndex}
-                    className={`px-3 py-1.5 rounded-lg text-sm border transition-all duration-300 ${
-                      colorClasses[category.color as keyof typeof colorClasses]
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.article>
-          ))}
-        </motion.div>
+    <section id="skills" className="py-32 overflow-hidden" aria-label="Stack tecnológico">
+      <div
+        ref={ref}
+        className="max-w-7xl mx-auto px-6 mb-14"
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(32px)",
+          transition: "opacity 0.8s ease, transform 0.8s ease",
+        }}
+      >
+        <div className="flex items-baseline gap-5">
+          <h2
+            className="font-display leading-none select-none"
+            style={{ fontSize: "clamp(3rem, 7vw, 6rem)", fontWeight: 900, color: "rgba(255,255,255,0.07)" }}
+          >
+            Stack
+          </h2>
+        </div>
       </div>
-    </motion.section>
+
+      <div className="flex flex-col gap-3">
+        <ul className="flex gap-3" style={{ animation: "marquee-fwd 38s linear infinite", width: "max-content" }} aria-hidden="true">
+          {SKILLS_ROW_A.map((skill, i) => (
+            <li
+              key={`a-${skill}-${i}`}
+              data-cursor-hover=""
+              className="font-mono-custom shrink-0 px-5 py-2.5 rounded-full text-white/38 hover:text-white/80 transition-all duration-300 hover:border-violet-500/40 select-none"
+              style={{ border: "1px solid rgba(255,255,255,0.07)", fontSize: "0.76rem" }}
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+
+        <ul className="flex gap-3" style={{ animation: "marquee-bwd 44s linear infinite", width: "max-content" }} aria-hidden="true">
+          {SKILLS_ROW_B.map((skill, i) => (
+            <li
+              key={`b-${skill}-${i}`}
+              data-cursor-hover=""
+              className="font-mono-custom shrink-0 px-5 py-2.5 rounded-full text-white/25 hover:text-white/70 transition-all duration-300 hover:border-violet-500/30 select-none"
+              style={{ border: "1px solid rgba(255,255,255,0.05)", fontSize: "0.76rem" }}
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

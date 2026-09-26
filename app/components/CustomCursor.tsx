@@ -1,8 +1,23 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
+
+function subscribeToPointerFine(callback: () => void) {
+  const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+  mediaQuery.addEventListener("change", callback);
+  return () => mediaQuery.removeEventListener("change", callback);
+}
+
+function getPointerFineSnapshot() {
+  return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+}
 
 export function CustomCursor() {
+  const isDesktop = useSyncExternalStore(
+    subscribeToPointerFine,
+    getPointerFineSnapshot,
+    () => false,
+  );
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const posRef = useRef({ x: -200, y: -200 });
@@ -55,6 +70,8 @@ export function CustomCursor() {
       cancelAnimationFrame(rafRef.current!);
     };
   }, []);
+
+  if (!isDesktop) return null;
 
   return (
     <>

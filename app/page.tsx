@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#08080f" }}>
       <style>{`
-        * { cursor: none !important; }
+        @media (hover: hover) and (pointer: fine) {
+          * { cursor: none !important; }
+        }
         html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { display: none; }
         * { -ms-overflow-style: none; scrollbar-width: none; }
@@ -30,6 +32,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.85, ease: "easeOut" }}
+            style={{ visibility: "visible" }} // Fallback: contenido visible aunque la animación falle
           >
             <Navbar />
             <Hero />

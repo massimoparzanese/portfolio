@@ -34,9 +34,9 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden" style={{ minHeight: "1em" }}>
           <motion.h1
-            initial={{ y: "110%" }}
+            initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ delay: 0.4, duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-white leading-[0.88] tracking-tighter"
@@ -45,12 +45,12 @@ export function Hero() {
             MASSIMO
           </motion.h1>
         </div>
-        <div className="overflow-hidden mb-14">
+        <div className="overflow-hidden mb-14" style={{ minHeight: "1em" }}>
           <motion.h2
-            initial={{ y: "110%" }}
+            initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ delay: 0.58, duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display leading-[0.88] tracking-tighter"
+            className="font-display leading-[0.88]"
             style={{
               fontSize: "clamp(2.5rem, 13vw, 13.5rem)",
               fontWeight: 900,

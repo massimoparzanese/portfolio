@@ -7,12 +7,14 @@ import { projects, CONTACT_INFO } from "../lib/config";
 
 export function Projects() {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   return (
     <Section id="projects" label="Proyectos" num="02">
       <div>
         {projects.map((p, index) => {
-          const isHovered = hovered === p.id;
+          const isExpanded = expandedId === p.id;
+          const isHovered = hovered === p.id || isExpanded;
           const codeUrl =
             p.showCode !== false
               ? p.githubUrl || p.githubLinks?.[0]?.url || undefined
@@ -21,10 +23,13 @@ export function Projects() {
           return (
             <article
               key={p.id}
-              className="group relative py-10"
+              className="group relative py-10 cursor-pointer"
               style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
               onMouseEnter={() => setHovered(p.id)}
               onMouseLeave={() => setHovered(null)}
+              onClick={() => {
+                setExpandedId(expandedId === p.id ? null : p.id);
+              }}
             >
               <div
                 className="absolute inset-x-0 inset-y-0 rounded-xl pointer-events-none transition-opacity duration-300"
@@ -36,7 +41,7 @@ export function Projects() {
 
               <div className="relative">
                 <div className="flex items-start justify-between gap-4 mb-5">
-                  <div className="flex items-baseline gap-5 min-w-0">
+                  <div className="flex items-baseline gap-5 min-w-0 flex-wrap">
                     <span className="font-mono-custom text-white/20 text-xs shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -49,6 +54,14 @@ export function Projects() {
                     >
                       {p.title}
                     </h3>
+                    {p.academic && (
+                      <span
+                        className="font-mono-custom text-violet-400/60 text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full"
+                        style={{ border: "1px solid rgba(139,92,246,0.3)" }}
+                      >
+                        Académico
+                      </span>
+                    )}
                   </div>
 
                   <div
@@ -89,7 +102,7 @@ export function Projects() {
 
                 <div
                   className="overflow-hidden transition-all duration-500"
-                  style={{ maxHeight: isHovered ? "220px" : "0px" }}
+                  style={{ maxHeight: isExpanded ? "220px" : "0px" }}
                 >
                   <p className="font-body text-white/48 text-sm leading-relaxed mb-5">{p.description}</p>
                   <ul className="flex flex-wrap gap-2" aria-label="Tecnologías">

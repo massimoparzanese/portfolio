@@ -32,7 +32,6 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.85, ease: "easeOut" }}
-            style={{ visibility: "visible" }} // Fallback: contenido visible aunque la animación falle
           >
             <Navbar />
             <Hero />

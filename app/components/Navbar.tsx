@@ -29,7 +29,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.7 }}
-      className="fixed top-0 left-0 right-0 z-40 transition-all duration-500"
+      className="fixed top-0 left-0 right-0 z-40 transition-[background-color,border-color,backdrop-filter] duration-500"
       style={{
         backgroundColor: scrolled ? "rgba(8,8,15,0.9)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",

@@ -12,13 +12,14 @@ const socials = [
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-20 px-6 overflow-hidden">
+      {/* Glow con radial-gradient en vez de filter: blur — el blur de radio grande es carísimo en WebKit (iOS) */}
       <div
-        className="absolute top-1/3 left-1/4 w-[700px] h-[500px] rounded-full pointer-events-none blur-[180px]"
-        style={{ background: "rgba(139,92,246,0.05)" }}
+        className="absolute top-1/3 left-1/4 w-[1100px] h-[900px] -translate-x-[200px] -translate-y-[200px] pointer-events-none"
+        style={{ background: "radial-gradient(closest-side, rgba(139,92,246,0.05), transparent)" }}
       />
       <div
-        className="absolute bottom-1/3 right-1/5 w-[500px] h-[400px] rounded-full pointer-events-none blur-[140px]"
-        style={{ background: "rgba(217,70,239,0.03)" }}
+        className="absolute bottom-1/3 right-1/5 w-[800px] h-[700px] translate-x-[150px] translate-y-[150px] pointer-events-none"
+        style={{ background: "radial-gradient(closest-side, rgba(217,70,239,0.03), transparent)" }}
       />
 
       <div className="max-w-7xl mx-auto w-full">

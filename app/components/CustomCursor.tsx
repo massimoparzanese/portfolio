@@ -26,6 +26,9 @@ export function CustomCursor() {
   const rafRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
+    // En touch no hay cursor: no registrar listeners ni arrancar el loop de rAF
+    if (!isDesktop) return;
+
     const onMove = (e: MouseEvent) => {
       posRef.current = { x: e.clientX, y: e.clientY };
       if (dotRef.current) {
@@ -69,7 +72,7 @@ export function CustomCursor() {
       window.removeEventListener("mouseover", onOver);
       cancelAnimationFrame(rafRef.current!);
     };
-  }, []);
+  }, [isDesktop]);
 
   if (!isDesktop) return null;
 

@@ -19,22 +19,29 @@ app/
 ├── lib/              # Config data and utilities
 └── page.tsx          # Root page
 public/               # Static assets
+├── images/           # Image assets
+└── massimo-foto.jpeg # Profile photo used in the About section
 ```
 
 ## Getting Started
 
+The project uses [pnpm](https://pnpm.io).
+
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+`pnpm start` serves the existing production build, so run `pnpm build` first whenever the code changes.
 
 ## Scripts
 
 | Command | Description |
 |---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production |
+| `pnpm start` | Start production server (requires a previous build) |
+| `pnpm lint` | Run ESLint |
+| `pnpm type-check` | Run the TypeScript compiler without emitting files |
